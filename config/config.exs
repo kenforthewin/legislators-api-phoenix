@@ -15,9 +15,8 @@ config :app, AppWeb.Endpoint,
   secret_key_base: "Jj04r2bTCjVyCduztiOV5uRseT1emCYzOUtdgHC9sk/riDsQI1G4BzaISYbSyFjH",
   render_errors: [view: AppWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: App.PubSub,
-           adapter: Phoenix.PubSub.PG2],
-  hostname: "db"
-
+           adapter: Phoenix.PubSub.PG2]
+           
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
