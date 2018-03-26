@@ -1,19 +1,13 @@
-# App
+# legislators-api-phoenix
 
-To start your Phoenix server:
+This is a Phoenix (Elixir) implementation of an example backend for [redux-remote-datatable](https://github.com/kenforthewin/react-redux-datatable).
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Start Phoenix endpoint with `mix phx.server`
+## Usage
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+Ensure docker-compose is installed and docker daemon is running. Navigate to the project folder and run `docker-compose up`. The API should be available at `localhost:4000/api`.
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+Then, use the redux-remote-datatable as so:
 
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+```javascript
+<DataTableRedux fields={{"Name": "official_name", "Birthday": "birthday", "Thomas ID": "thomas_id" }} ajax={"http://localhost:4000/api/legislators"} idField={"id"} />
+```
