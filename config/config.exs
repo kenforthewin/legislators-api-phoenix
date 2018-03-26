@@ -16,7 +16,7 @@ config :app, AppWeb.Endpoint,
   render_errors: [view: AppWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: App.PubSub,
            adapter: Phoenix.PubSub.PG2],
-  hostname: "db",
+  hostname: "db"
 
 # Configures Elixir's Logger
 config :logger, :console,
