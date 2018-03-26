@@ -36,7 +36,7 @@ defmodule AppWeb.Endpoint do
     store: :cookie,
     key: "_app_key",
     signing_salt: "4frKACzh"
-  plug CORSPlug, origin: ["http://localhost:3001"]
+  plug CORSPlug, origin: ["http://localhost:3001","https://datatable.kenforthewin.com"]
   plug AppWeb.Router
 
   @doc """
