@@ -2,6 +2,8 @@
 set -e
 echo $MIX_ENV
 
+mix deps.get
+mix compile --force
 mix ecto.create
 mix ecto.migrate
 
