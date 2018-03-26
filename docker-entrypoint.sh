@@ -2,7 +2,7 @@
 set -e
 
 mix deps.get
-# mix deps.compile --include-children --force
+mix compile --force
 mix ecto.create
 mix ecto.migrate
 

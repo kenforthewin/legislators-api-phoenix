@@ -8,4 +8,5 @@ RUN mix local.rebar --force
 WORKDIR /app
 COPY ./ ./
 
+EXPOSE 80
 ENTRYPOINT [ "./docker-entrypoint.sh" ]
