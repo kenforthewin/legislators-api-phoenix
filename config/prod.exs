@@ -15,8 +15,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :app, AppWeb.Endpoint,
   load_from_system_env: false,
-  url: [host: "legislators.kenforthewin.com", port: 80],
-  http: [port: 80]
+  url: [host: "legislators.kenforthewin.com", port: 80]
   
 # Do not print debug messages in production
 config :logger, level: :info
