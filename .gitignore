@@ -16,3 +16,6 @@ erl_crash.dump
 /config/*.secret.exs
 .env
 congress-legislators/
+/config/*.secret.exs
+.env
+db-key.json

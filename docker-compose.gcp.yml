@@ -1,0 +1,26 @@
+version: '3'
+services:
+  app:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - MIX_ENV=prod
+      - PORT=4000
+      - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
+      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
+      - FULL_HOST=${FULL_HOST}
+  db:
+    image: gcr.io/cloudsql-docker/gce-proxy:1.11
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - $PWD/cloudsql:/cloudsql
+      - $PWD/db-key.json:/config
+    command:
+      - /cloud_sql_proxy
+      - -instances=react-rails-auth:us-central1:scalr=tcp:0.0.0.0:5432
+      - -credential_file=/config
+      
